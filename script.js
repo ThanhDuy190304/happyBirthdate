@@ -16,5 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
             viewtext.style.display = "none"; // Ẩn viewtext
         });
 
+        // Sự kiện click thay thế hover trên thiết bị di động
+        cat.addEventListener("click", () => {
+            // Kiểm tra xem viewtext có đang hiển thị không
+            if (viewtext.style.display === "none" || viewtext.style.display === "") {
+                viewtext.style.display = "block"; // Hiển thị viewtext khi click
+            } else {
+                viewtext.style.display = "none"; // Ẩn viewtext khi click lần nữa
+            }
+        });
+
     });
 });
