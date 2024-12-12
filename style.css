@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f2e7;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#cat {
+    position: relative;
+    top: -150px;
+    /* Bắt đầu từ bên trên màn hình */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 240px;
+    background: url('michi_kawaii.gif') no-repeat center / cover;
+    /* Thay bằng ảnh GIF con mèo của bạn */
+    animation: fall 2s ease-in-out forwards;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    /* Hiệu ứng mượt */
+}
+
+#cat:hover {
+    transform: translateX(-50%) scale(1.2);
+    /* Tăng kích thước */
+    width: 250px;
+    /* Kích thước tăng */
+    height: 250px;
+}
+
+/* Hiệu ứng rơi xuống */
+@keyframes fall {
+    0% {
+        top: -150px;
+    }
+
+    100% {
+        top: calc(50% - 200px);
+    }
+}
+
+#viewtext {
+    display: none;
+    /* Ban đầu ẩn */
+    width: 240px;
+    /* Kích thước wish.png */
+    height: 240px;
+    background-image: url("wish.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -140px;
+    left: 56px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Hiệu ứng mượt */
+}
+
+#cat:hover #viewtext {
+    display: block;
+    /* Hiển thị khi hover vào #cat */
+}
+
+.wave-container {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    /* Ngăn người dùng tương tác */
+    display: none;
+    /* Hiển thị khi mèo dừng */
+}
+
+.wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: url('wave.png') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    border-radius: 50%;
+    animation: waveEffect 1s ease-in-out forwards;
+}
+
+.wave2 {
+    animation-delay: 0.5s;
+    /* Sóng thứ 2 xuất hiện chậm hơn */
+}
+
+@keyframes waveEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0.2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
