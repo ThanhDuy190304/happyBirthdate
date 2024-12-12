@@ -33,9 +33,15 @@ body {
 
 #cat:hover {
     transform: translateX(-50%) scale(1.2);
-    /* Tăng kích thước */
+    /* Tăng kích thước khi hover */
     width: 250px;
-    /* Kích thước tăng */
+    height: 250px;
+}
+
+#cat.clicked {
+    transform: translateX(-50%) scale(1.2);
+    /* Tăng kích thước khi click */
+    width: 250px;
     height: 250px;
 }
 
@@ -61,15 +67,11 @@ body {
     background-position: center;
     position: absolute;
     top: -140px;
-    left: 56px;
+    left: 48px;
     transition: opacity 0.3s ease, transform 0.3s ease;
     /* Hiệu ứng mượt */
 }
 
-#cat:hover #viewtext {
-    display: block;
-    /* Hiển thị khi hover vào #cat */
-}
 
 .wave-container {
     position: absolute;
